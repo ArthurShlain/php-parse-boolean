@@ -1,0 +1,58 @@
+class BooleanHelper {
+
+    /**
+     * Any scalar value to boolean
+     *
+     * @param         $value : value to parse
+     * @param  bool   $default : false (pessimist)
+     * @param  array  $custom_positives : custom positive rules
+     * @param  array  $custom_negatives : custom negative rules
+     * @return bool
+     */
+    public static function anyValueToBoolean($value, $default = false, $custom_positives = [], $custom_negatives = [])
+    {
+        if (is_null($value)) {
+            return false;
+        }
+        if (!is_scalar($value)) {
+            if (is_array($value)) {
+                return !empty($value);
+            }
+            return false;
+        }
+        $value = trim(mb_strtolower(strval($value)));
+        if (is_numeric($value)) {
+            return !empty($value);
+        } // numbers
+        if (empty($value)) {
+            return false;
+        }
+
+        $positives = array();
+        array_push($positives, '+'); // plus
+        array_push($positives, '✓', '✔', '☑', '✅', '˅', 'ѵ'); // check symbols
+        array_push($positives, '✔️', '☑️', '✅️'); // check emoji
+        array_push($positives, '👍', '👍🏻', '👍🏼', '👍🏽', '👍🏾', '👍🏿'); // thumbs up emoji
+        array_push($positives, 'true', 'yes', 'y', 'v'); // english
+        array_push($positives, 'истина', 'да', 'д', 'есть'); // russian
+        $positives = array_merge($positives, $custom_positives);
+
+        $negatives = array();
+        array_push($negatives, '-', '–', '—', '―'); // minus, ndash, mdash, horizontal line
+        array_push($negatives, 'x', 'х', '×', '✘', '✖', '╳', '☓', 'ᚷ', 'ㄨ', 'メ', 'Ⅹ', 'χ', 'ꭓ'); // cross symbols
+        array_push($negatives, '✖️', '❌'); // cross emoji
+        array_push($positives, '👎', '👎🏻', '👎🏼', '👎🏽', '👎🏾', '👎🏿'); // thumbs down emoji
+        array_push($negatives, 'false', 'no', 'n'); // english
+        array_push($negatives, 'ложь', 'нет', 'н'); // russian
+        $negatives = array_merge($negatives, $custom_negatives);
+
+        if (in_array($value, $positives)) {
+            return true;
+        }
+        if (in_array($value, $negatives)) {
+            return false;
+        }
+        return $default;
+    }
+
+}
