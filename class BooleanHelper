@@ -38,7 +38,7 @@ class BooleanHelper {
         $positives = array_merge($positives, $custom_positives);
 
         $negatives = array();
-        array_push($negatives, '-', '–', '—', '―'); // minus, ndash, mdash, horizontal line
+        array_push($negatives, '-', '−', '–', '—', '―'); // hyphen, minus, ndash, mdash, horizontal line
         array_push($negatives, 'x', 'х', '×', '✘', '✖', '╳', '☓', 'ᚷ', 'ㄨ', 'メ', 'Ⅹ', 'χ', 'ꭓ'); // cross symbols
         array_push($negatives, '✖️', '❌'); // cross emoji
         array_push($negatives, '👎', '👎🏻', '👎🏼', '👎🏽', '👎🏾', '👎🏿'); // thumbs down emoji
