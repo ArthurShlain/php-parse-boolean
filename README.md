@@ -36,13 +36,13 @@ BooleanHelper::anyValueToBoolean('this string not in rules', 'this is default va
 
 
 `
-BooleanHelper::anyValueToBoolean('a', false, ['a'], ['b']);`
+BooleanHelper::anyValueToBoolean('positive', false, ['positive', 'plus'], ['negative', 'minus']);`
 
 // true
 
 
 `
-BooleanHelper::anyValueToBoolean('b', false, ['a'], ['b']);`
+BooleanHelper::anyValueToBoolean('minus', false, ['positive', 'plus'], ['negative', 'minus']);`
 
 // false
 
