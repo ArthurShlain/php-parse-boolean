@@ -1,6 +1,8 @@
 # php-parse-boolean
 Parse any scalar value to boolean
 
+Just copy `anyValueToBoolean` function to your Helpers class
+
 ## Usage
 
 `
