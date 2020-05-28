@@ -1,5 +1,5 @@
 # php-parse-boolean
-Parse any scalar value to boolean
+Parse any scalar value to boolean. Useful when you need to parse boolean columns of spreadsheet file.
 
 Just copy `anyValueToBoolean` function to your Helpers class
 
