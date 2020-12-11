@@ -32,7 +32,6 @@ class BooleanHelper {
         array_push($positives, '+'); // plus
         array_push($positives, '✓', '✔', '☑', '✅', '˅', 'ѵ'); // check symbols
         array_push($positives, '✔️', '☑️', '✅️'); // check emoji
-        array_push($positives, '👍', '👍🏻', '👍🏼', '👍🏽', '👍🏾', '👍🏿'); // thumbs up emoji
         array_push($positives, 'true', 'yes', 'y', 'v'); // english
         array_push($positives, 'истина', 'да', 'д', 'есть'); // russian
         $positives = array_merge($positives, $custom_positives);
@@ -41,7 +40,6 @@ class BooleanHelper {
         array_push($negatives, '-', '−', '–', '—', '―'); // hyphen, minus, ndash, mdash, horizontal line
         array_push($negatives, 'x', 'х', '×', '✘', '✖', '╳', '☓', 'ᚷ', 'ㄨ', 'メ', 'Ⅹ', 'χ', 'ꭓ'); // cross symbols
         array_push($negatives, '✖️', '❌'); // cross emoji
-        array_push($negatives, '👎', '👎🏻', '👎🏼', '👎🏽', '👎🏾', '👎🏿'); // thumbs down emoji
         array_push($negatives, 'false', 'no', 'n'); // english
         array_push($negatives, 'ложь', 'нет', 'н'); // russian
         $negatives = array_merge($negatives, $custom_negatives);
