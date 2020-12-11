@@ -38,8 +38,7 @@ BooleanHelper::anyValueToBoolean('this string not in rules', 'this is default va
 ```php
 $positives = ['positive', 'plus'];
 $negatives = ['negative', 'minus'];
-BooleanHelper::anyValueToBoolean('positive', false, $positives, $negatives);
-```
+BooleanHelper::anyValueToBoolean('positive', false, $positives, $negatives);```
 
 // true
 
@@ -47,8 +46,7 @@ BooleanHelper::anyValueToBoolean('positive', false, $positives, $negatives);
 ```php
 $positives = ['positive', 'plus'];
 $negatives = ['negative', 'minus'];
-BooleanHelper::anyValueToBoolean('minus', false, $positives, $negatives);
-`
+BooleanHelper::anyValueToBoolean('minus', false, $positives, $negatives);`
 
 // false
 
